@@ -12,7 +12,7 @@ def generate_anchors(feature_size: int, image_size: float, scales: list[float], 
             cx = (j + 0.5) * stride
             cy = (i + 0.5) * stride
             for scale in scales:
-                for aspect_ratio in aspect_ratios:
+                for aspect_ratio in aspect_ratios: # This w and h could be pre-computed and iterate over the pre-computed lists to save some time for large lists
                     w = scale * sqrt(aspect_ratio)
                     h = scale / sqrt(aspect_ratio)
                     anchors.append([cx - w/2, cy - h/2, cx + w/2, cy + h/2])
