@@ -12,7 +12,7 @@ def apply_homogeneous_transform(T: list, points: list) -> np.ndarray:
     points = points.T
     result = np.dot(T, points)
     if dim_to_return == 1:
-        return result[:][:3].reshape(3)
+        return result[:3].reshape(3)
     else:
-        result = result[:][:3].T
+        result = result[:3].T
         return result
