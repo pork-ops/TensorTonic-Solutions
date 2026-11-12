@@ -5,7 +5,6 @@ def matrix_trace(A: list) -> float:
     Returns the trace as a float.
     """
     # Write code here
-    diagonal = []
-    for i in range(len(A)):
-        diagonal.append(A[i][i])
-    return np.sum(np.array(diagonal))
+    indexes = np.arange(0, len(A))
+    A = np.array(A)
+    return float(np.sum(A[indexes,indexes]))
